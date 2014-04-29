@@ -89,6 +89,9 @@ when 'smartos'
   default['rabbitmq']['erlang_cookie_path'] = '/var/db/rabbitmq/.erlang.cookie'
 end
 
+# Heartbeat
+default['rabbitmq']['heartbeat'] = 600
+
 # Example HA policies
 default['rabbitmq']['policies']['ha-all']['pattern'] = '^(?!amq\\.).*'
 default['rabbitmq']['policies']['ha-all']['params'] = { 'ha-mode' => 'all' }

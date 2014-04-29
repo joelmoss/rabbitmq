@@ -3,7 +3,7 @@ maintainer        'Opscode, Inc.'
 maintainer_email  'cookbooks@opscode.com'
 license           'Apache 2.0'
 description       'Installs and configures RabbitMQ server'
-version           '3.2.1'
+version           '3.3.0'
 recipe            'rabbitmq', 'Install and configure RabbitMQ'
 recipe            'rabbitmq::cluster', 'Set up RabbitMQ clustering.'
 recipe            'rabbitmq::plugin_management', 'Manage plugins with node attributes'
@@ -100,6 +100,10 @@ attribute 'rabbitmq/disabled_plugins',
   :description => 'List all plugins that will be deactivated',
   :default => [],
   :type => 'array'
+
+attribute 'rabbitmq/heartbeat',
+  :display_name => 'Heartbeat value',
+  :description => 'The value in seconds of the RabbitMQ heartbeat'
 
 attribute 'rabbitmq/local_erl_networking',
   :display_name => 'Local Erlang networking',
